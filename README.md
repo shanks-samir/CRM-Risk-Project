@@ -35,22 +35,22 @@ How to Run
 
 Follow these steps to initialize the environment and launch the engine:
 
-### 1\. Install Dependencies
+1. Install Dependencies
 
 Ensure you have a virtual environment active, then install the required libraries:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   pip install -r requirements.txt   `
+pip install -r requirements.txt   
 
-### 2\. Initialize Data & Run Risk Calculations
+2. Initialize Data & Run Risk Calculations
 
 Execute the data pipeline module to fetch live market data, run the Monte Carlo simulations, and generate the audit log. Run this command from the root directory:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   python -m modules.pipeline   `
+python -m modules.pipeline   
 
 > **Note:** This command creates the data/crm\_risk.db file and populates it with historical market context and mock trades (including simulated errors to test the "FAIL" state).
 
-### 3\. Launch the Audit Dashboard
+3. Launch the Audit Dashboard
 
 Start the Streamlit web interface to visualize the risk reports and the conformity audit trail:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   streamlit run app.py   `
+streamlit run app.py  
