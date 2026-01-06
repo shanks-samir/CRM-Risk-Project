@@ -4,14 +4,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-# --- 1. CONFIGURATION ---
+# CONFIGURATION 
 st.set_page_config(
     page_title="CRM Risk Engine",
     page_icon="🛡️",
     layout="wide"
 )
 
-# Custom CSS for that "Corporate" look
+# Custom CSS 
 st.markdown("""
     <style>
     .main { background-color: #f5f5f5; }
@@ -20,7 +20,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# --- 2. DATA FUNCTIONS ---
+# DATA FUNCTIONS 
 def load_market_data():
     """Fetches the latest market snapshot for all assets."""
     conn = sqlite3.connect('data/crm_risk.db')
@@ -41,7 +41,7 @@ def load_audit_log():
     conn.close()
     return df
 
-# --- 3. DASHBOARD LAYOUT ---
+# DASHBOARD LAYOUT
 
 # Header
 col1, col2 = st.columns([3, 1])

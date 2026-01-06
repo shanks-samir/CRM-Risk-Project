@@ -4,7 +4,7 @@ import yfinance as yf
 from datetime import datetime
 import os
 
-# Import the logic we built for Day 2
+# Import the logic 
 from modules.risk_math import calculate_var, get_esg_rating
 from modules.conformity import check_market_conformity
 
@@ -31,7 +31,7 @@ class DataPipeline:
                     data_source TEXT
                 )
             ''')
-            # Table 2: Trade Audit (The 'Big Four' Audit Trail)
+            # Table 2: Trade Audit (The Audit Trail)
             conn.execute('''
                 CREATE TABLE IF NOT EXISTS trade_audit (
                     trade_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -88,7 +88,7 @@ class DataPipeline:
             ''', (ticker, price, status, remarks))
             print(f"Audit Logged: {ticker} | Status: {status}")
 
-# --- Execution Block ---
+#  Execution Block 
 if __name__ == "__main__":
     pipeline = DataPipeline()
     
@@ -109,7 +109,6 @@ if __name__ == "__main__":
             pipeline.save_market_snapshot(ctx)
 
             # 3. Perform Risk Calculations (Monte Carlo & ESG)
-            # These demonstrate the 'Secret Sauce' [00:52]
             var_amount = calculate_var(ctx['history'])
             esg_info = get_esg_rating(ctx['consensus_mech'])
             print(f"  > Risk Metrics: VaR=${var_amount} | ESG: {esg_info['rating']}")
